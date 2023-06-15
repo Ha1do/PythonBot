@@ -45,3 +45,7 @@ async def blacklistadd_command (update: Update, context: ContextTypes.DEFAULT_TY
 
 async def blacklistremove_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Хайдо п*дор will never be removed from black list")
+
+async def clear_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
+# TODO: make a chat clear function
+    pass

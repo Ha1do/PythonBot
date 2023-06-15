@@ -39,17 +39,18 @@ if __name__ == "__main__":
     app = Application.builder().token(API_TOKEN).build()
 
     #Commands
-    app.add_handler(CommandHandler("start", Commands.start_command))
+    app.add_handler(CommandHandler("start", Commands.start_command)) # TODO: welcom message
     app.add_handler(CommandHandler("help", Commands.help_command))
-    app.add_handler(CommandHandler("pin", Commands.pin_command))
-    app.add_handler(CommandHandler("sendmedia", Commands.sendmedia_command))
-    app.add_handler(CommandHandler("warn", Commands.warn_command))
-    app.add_handler(CommandHandler("kick", Commands.kick_command))
-    app.add_handler(CommandHandler("ban", Commands.ban_command))
-    app.add_handler(CommandHandler("setrules", Commands.setrules_command))
-    app.add_handler(CommandHandler("report", Commands.report_command))
-    app.add_handler(CommandHandler("blacklistadd", Commands.blacklistadd_command))
+    app.add_handler(CommandHandler("pin", Commands.pin_command)) #TODO: pin
+    app.add_handler(CommandHandler("sendmedia", Commands.sendmedia_command)) #TODO: send media fucn
+    app.add_handler(CommandHandler("warn", Commands.warn_command)) #TODO: warn pissibility
+    app.add_handler(CommandHandler("kick", Commands.kick_command)) #TODO: kick pissibility
+    app.add_handler(CommandHandler("ban", Commands.ban_command)) #TODO: ban pissibility
+    app.add_handler(CommandHandler("setrules", Commands.setrules_command)) #TODO: set rules pissibility
+    app.add_handler(CommandHandler("report", Commands.report_command)) #TODO: report pissibility
+    app.add_handler(CommandHandler("blacklistadd", Commands.blacklistadd_command)) #TODO: blacklist add/remove
     app.add_handler(CommandHandler("blacklistremove", Commands.blacklistremove_command))
+    app.add_handler(CommandHandler("clear", Commands.clear_command))
 
     #Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
