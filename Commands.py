@@ -3,30 +3,35 @@ from telegram.ext import *
 
 #Commands
 async def start_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello")
+    await update.message.reply_text("Helo, i am the Ha1do's testing chatbot")
 
 async def help_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("U called about help, so here i am"
-                              "/start -> starts a bot"
-                              "/help -> call this message"
-                              "/pin -> pins a message"
-                              "/sendmedia -> sends a social media post"
-                              "/warn"
-                              "/kick"
-                              "/ban"
-                              "/setrules"
-                              "/report"
-                              "/blacklistadd"
-                              "/blacklistremove")
+    await update.message.reply_text("U called about help, so here i am\n"
+                              "/start -> starts a bot\n"
+                              "/help -> call this message\n"
+                              "/pin -> pins a message\n"
+                              "/sendmedia -> sends a social media post\n"
+                              "/warn -> to warn a user\n"
+                              "/kick -> to kick a user\n"
+                              "/ban -> to ban a user\n"
+                              "/setrules -> set the chat rules\n"
+                              "/report -> send report about bot or user\n"
+                              "/blacklistadd -> add your word to blacklist\n"
+                              "/blacklistremove -> remove word from blacklist\n")
 
 async def pin_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("pinned text XD")
+    text_to_pin: str = update.message.reply_to_message.text
+    await update.message.reply_to_message.pin()
+    await update.message.reply_text("pinned✅")
+
 
 async def sendmedia_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("i must send some social media but now i can't")
 
 async def warn_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("let's think i waned u")
+    warn_user: str = update.message.text.replace("/warn@Ha1do_bot ", '')
+    print(update.message.contact)
+    await update.message.reply_text(f"{warn_user} - gets warn")
 
 async def kick_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("i think now u can't be here, but if u already there - u can stay")
@@ -45,7 +50,3 @@ async def blacklistadd_command (update: Update, context: ContextTypes.DEFAULT_TY
 
 async def blacklistremove_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Хайдо п*дор will never be removed from black list")
-
-async def clear_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-# TODO: make a chat clear function
-    pass
