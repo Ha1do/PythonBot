@@ -31,7 +31,7 @@ async def sendmedia_command (update: Update, context: ContextTypes.DEFAULT_TYPE)
 async def warn_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     warn_user: str = update.message.text.replace("/warn@Ha1do_bot ", '')
     print(update.message.contact)
-    await update.message.reply_text(f"{warn_user} - gets warn")
+    await update.message.reply_text(f"{warn_user} - gets warn 01")
 
 async def kick_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("i think now u can't be here, but if u already there - u can stay")
