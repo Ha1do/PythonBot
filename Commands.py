@@ -20,13 +20,18 @@ async def help_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
                               "/blacklistremove -> remove word from blacklist\n")
 
 async def pin_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text_to_pin: str = update.message.reply_to_message.text
-    await update.message.reply_to_message.pin()
-    await update.message.reply_text("pinned✅")
 
+    if update.message.text.startswith("/pin") and update.message.message_thread_id is None:
+        # если сообщение пользователя на чинается командой "/pin" и он не ответил на другое сообщение...
+        await update.message.reply_text("You need to answer on message you want me to pin")
+
+    else:
+        text_to_pin: str = update.message.reply_to_message.text
+        await update.message.reply_to_message.pin()
+        await update.message.reply_text("pinned✅")
 
 async def sendmedia_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("i must send some social media but now i can't")
+    await update.message.reply_text("idk what this command must do ¯\_(ツ)_/¯")
 
 async def warn_command (update: Update, context: ContextTypes.DEFAULT_TYPE):
     warn_user: str = update.message.text.replace("/warn@Ha1do_bot ", '')
