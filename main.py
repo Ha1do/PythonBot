@@ -2,8 +2,8 @@ from telegram import *
 from telegram.ext import *
 import Commands
 
-API_TOKEN = '1256415211:AAGQfWloyT0H91OrMlmfsM17IUFS7YVmDWg'
-BOT_USERNAME = "@Ha1do_bot"
+API_TOKEN = '<token>'
+BOT_USERNAME = "@<bot_username>"
 
 #Response
 def handle_response (text: str) -> str:
